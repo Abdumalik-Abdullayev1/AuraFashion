@@ -8,7 +8,7 @@ import Prada from '../../assets/Prada.png'
 import CK from '../../assets/CK.png'
 import T_Shirt from '../../assets/TShirt.png'
 import Pants from '../../assets/Pants.png'
-import stars from '../../assets/starss.png'
+import stars from '../../assets/stars.png'
 import Shirt from '../../assets/vertical_tshirt.png'
 import Shorts from '../../assets/Shorts.png'
 
