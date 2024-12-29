@@ -6,7 +6,7 @@ import Zara from '../../assets/Zara.png'
 import Gucci from '../../assets/Gucci.png'
 import Prada from '../../assets/Prada.png'
 import CK from '../../assets/CK.png'
-import T_Shirt from '../../assets/TShirt.png'
+import TShirt from '../../assets/Tshirt.png'
 import Pants from '../../assets/Pants.png'
 import stars from '../../assets/stars.png'
 import Shirt from '../../assets/vertical_tshirt.png'
@@ -20,7 +20,7 @@ const Index = () => {
   }
 
   const products = [
-    { imgSrc: T_Shirt, title: "T-SHIRT WITH TAPE DETAILS", price: "$120" },
+    { imgSrc: TShirt, title: "T-SHIRT WITH TAPE DETAILS", price: "$120" },
     { imgSrc: Pants, title: "FADED SKINNY JEANS", price: "$210" },
     { imgSrc: Shorts, title: "LOOSE FIT BERMUDA SHORTS", price: "$80" },
     { imgSrc: Shirt, title: "Vertical Striped Shirt", price: "$212" },
