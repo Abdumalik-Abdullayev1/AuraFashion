@@ -102,7 +102,7 @@ const Index = () => {
           onClick={handleSee}
           className='w-full my-3 py-3 rounded-[50px] border outline-none text-lg font-bold hover:bg-black hover:text-white duration-300'
         >
-          {showAll ? "See less" : 'See more clothes'}
+          {showAll ? "See less" : 'See more'}
         </button>
       </div>
     </div>
