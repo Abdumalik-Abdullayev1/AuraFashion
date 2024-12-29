@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Hero from '../../assets/hero_img.png'
 import Hero2 from '../../assets/hero_img2.png'
 import Versace from '../../assets/Versace.png'
@@ -6,8 +6,26 @@ import Zara from '../../assets/Zara.png'
 import Gucci from '../../assets/Gucci.png'
 import Prada from '../../assets/Prada.png'
 import CK from '../../assets/CK.png'
+import T_Shirt from '../../assets/T-Shirt.png'
+import Pants from '../../assets/Pants.png'
+import stars from '../../assets/starss.png'
+import Shirt from '../../assets/vertical_t-shirt.png'
+import Shorts from '../../assets/Shorts.png'
 
 const Index = () => {
+  const [showAll, setShowAll] = useState(false)
+
+  const handleSee = () => {
+    setShowAll(!showAll)
+  }
+
+  const products = [
+    { imgSrc: T_Shirt, title: "T-SHIRT WITH TAPE DETAILS", price: "$120" },
+    { imgSrc: Pants, title: "FADED SKINNY JEANS", price: "$210" },
+    { imgSrc: Shorts, title: "LOOSE FIT BERMUDA SHORTS", price: "$80" },
+    { imgSrc: Shirt, title: "Vertical Striped Shirt", price: "$212" },
+  ]
+
   return (
     <div className='my-5'>
       <div>
@@ -43,6 +61,49 @@ const Index = () => {
         <button><img src={Gucci} alt="Gucci" /></button>
         <button className='mt-5 px-5 sm:mt-0'><img src={Prada} alt="Prada" /></button>
         <button className='mt-5 sm:mt-0'><img src={CK} alt="CK" /></button>
+      </div>
+      <div className='px-5'>
+        <h2 className='text-black font-extrabold text-center text-[32px] my-3'>New Arrivals</h2>
+        <div className='grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-4'>
+          {products.slice(0, showAll ? products.length : 2).map((product, index) => (
+            <div key={index}>
+              <img src={product.imgSrc} alt={product.title} />
+              <div className="font-bold text-xl">
+                <p className="text-sm">{product.title}</p>
+                <img src={stars} alt="ranking_stars" />
+                <p>{product.price}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <button
+          onClick={handleSee}
+          className='w-full my-3 py-3 rounded-[50px] border outline-none text-lg font-bold hover:bg-black hover:text-white duration-300 mb-10'
+        >
+          {showAll ? "See less" : 'See more'}
+        </button>
+      <hr/>
+      </div>
+      <div className='px-5'>
+        <h2 className='text-black font-extrabold text-center text-[32px] my-5'>Top Selling</h2>
+        <div className='grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-4'>
+          {products.slice(0, showAll ? products.length : 2).map((product, index) => (
+            <div key={index}>
+              <img src={product.imgSrc} alt={product.title} />
+              <div className="font-bold text-xl">
+                <p className="text-sm">{product.title}</p>
+                <img src={stars} alt="ranking_stars" />
+                <p>{product.price}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <button
+          onClick={handleSee}
+          className='w-full my-3 py-3 rounded-[50px] border outline-none text-lg font-bold hover:bg-black hover:text-white duration-300'
+        >
+          {showAll ? "See less" : 'See more'}
+        </button>
       </div>
     </div>
   )
