@@ -6,6 +6,10 @@ import Zara from '../../assets/Zara.png'
 import Gucci from '../../assets/Gucci.png'
 import Prada from '../../assets/Prada.png'
 import CK from '../../assets/CK.png'
+import Casual from '../../assets/casual.png'
+import Formal from '../../assets/formal.png'
+import Party from '../../assets/party.png'
+import Gym from '../../assets/gym.png'
 import { Products } from '../../components'
 
 const Index = () => {
@@ -45,7 +49,32 @@ const Index = () => {
         <button className='mt-5 px-5 sm:mt-0'><img src={Prada} alt="Prada" /></button>
         <button className='mt-5 sm:mt-0'><img src={CK} alt="CK" /></button>
       </div>
-      <Products/>
+      <Products />
+      <div className='px-5 xl:px-16 my-14'>
+        <div className='bg-slate-300 px-5 xl:px-20 rounded-xl w-full py-5'>
+          <div className='flex justify-center'>
+            <h2 className='font-extrabold text-center text-3xl xl:text-5xl py-5'>BROWSE BY DRESS STYLE</h2>
+          </div>
+          <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 my-5'>
+            <div className='bg-white rounded-lg grid justify-between p-5 relative overflow-hidden h-[170px] xl:h-[240px] hover:bg-black hover:text-white duration-500'>
+              <p className='text-3xl font-semibold xl:text-5xl'>Casual</p>
+              <img className='absolute top-0 right-0 xl:w-full' src={Casual} alt="Casual_dresses" />
+            </div>
+            <div className='bg-white rounded-lg grid justify-between p-5 relative overflow-hidden h-[170px] xl:h-[240px] lg:col-span-2 hover:bg-black hover:text-white duration-500'>
+              <p className='text-3xl font-semibold xl:text-6xl'>Formal</p>
+              <img className='absolute top-0 right-0 xl:w-3/5 2xl:w-1/2' src={Formal} alt="Formal_dresses" />
+            </div>
+            <div className='bg-white rounded-lg grid justify-between p-5 relative overflow-hidden h-[170px] xl:h-[240px] lg:col-span-2 hover:bg-black hover:text-white duration-500'>
+              <p className='text-3xl font-semibold xl:text-6xl'>Party</p>
+              <img className='absolute top-0 right-0 xl:w-3/5 2xl:w-1/2' src={Party} alt="Prty_dresses" />
+            </div>
+            <div className='bg-white rounded-lg grid justify-between p-5 relative overflow-hidden h-[170px] xl:h-[240px] hover:bg-black hover:text-white duration-500'>
+              <p className='text-3xl font-semibold xl:text-5xl'>Gym</p>
+              <img className='absolute top-0 right-0 xl:w-full' src={Gym} alt="Gym_dresses" />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
