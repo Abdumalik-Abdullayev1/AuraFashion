@@ -56,22 +56,22 @@ const Index = () => {
             <h2 className='font-extrabold text-center text-3xl xl:text-5xl py-5'>BROWSE BY DRESS STYLE</h2>
           </div>
           <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 my-5'>
-            <div className='bg-white rounded-lg grid justify-between p-5 relative overflow-hidden h-[170px] xl:h-[240px] hover:bg-black hover:text-white duration-500'>
+            <button className='bg-white rounded-lg grid justify-between p-5 relative overflow-hidden h-[170px] xl:h-[240px] hover:bg-black hover:text-white duration-700'>
               <p className='text-3xl font-semibold xl:text-5xl'>Casual</p>
               <img className='absolute top-0 right-0 xl:w-full' src={Casual} alt="Casual_dresses" />
-            </div>
-            <div className='bg-white rounded-lg grid justify-between p-5 relative overflow-hidden h-[170px] xl:h-[240px] lg:col-span-2 hover:bg-black hover:text-white duration-500'>
+            </button>
+            <button className='bg-white rounded-lg grid justify-between p-5 relative overflow-hidden h-[170px] xl:h-[240px] lg:col-span-2 hover:bg-black hover:text-white duration-700'>
               <p className='text-3xl font-semibold xl:text-6xl'>Formal</p>
               <img className='absolute top-0 right-0 xl:w-3/5 2xl:w-1/2' src={Formal} alt="Formal_dresses" />
-            </div>
-            <div className='bg-white rounded-lg grid justify-between p-5 relative overflow-hidden h-[170px] xl:h-[240px] lg:col-span-2 hover:bg-black hover:text-white duration-500'>
+            </button>
+            <button className='bg-white rounded-lg grid justify-between p-5 relative overflow-hidden h-[170px] xl:h-[240px] lg:col-span-2 hover:bg-black hover:text-white duration-700'>
               <p className='text-3xl font-semibold xl:text-6xl'>Party</p>
               <img className='absolute top-0 right-0 xl:w-3/5 2xl:w-1/2' src={Party} alt="Prty_dresses" />
-            </div>
-            <div className='bg-white rounded-lg grid justify-between p-5 relative overflow-hidden h-[170px] xl:h-[240px] hover:bg-black hover:text-white duration-500'>
+            </button>
+            <button className='bg-white rounded-lg grid justify-between p-5 relative overflow-hidden h-[170px] xl:h-[240px] hover:bg-black hover:text-white duration-700'>
               <p className='text-3xl font-semibold xl:text-5xl'>Gym</p>
               <img className='absolute top-0 right-0 xl:w-full' src={Gym} alt="Gym_dresses" />
-            </div>
+            </button>
           </div>
         </div>
       </div>

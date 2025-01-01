@@ -40,10 +40,10 @@ const Index = () => {
                 <h2 className='text-black font-extrabold text-center text-[32px] my-3'>New Arrivals</h2>
                 <div className='grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 lg:mb-20'>
                     {products.slice(0, showAll ? products.length : cardShow).map((product, index) => (
-                        <div key={index}>
+                        <div key={index} className='hover:shadow-xl duration-500 rounded-lg'>
                             <img src={product.imgSrc} alt={product.title} />
-                            <div className="font-bold text-xl">
-                                <p className="text-sm">{product.title}</p>
+                            <div className="font-bold text-xl p-3">
+                                <p className="text-sm lg:text-lg">{product.title}</p>
                                 <img src={stars} alt="ranking_stars" />
                                 <p>{product.price}</p>
                             </div>
