@@ -1,13 +1,23 @@
 import React, { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import TShirt from '../../assets/Tshirt.png'
 import Pants from '../../assets/Pants.png'
 import stars from '../../assets/stars.png'
 import Shirt from '../../assets/vertical_tshirt.png'
 import Shorts from '../../assets/Shorts.png'
 
+export const products = [
+    { id: 1, imgSrc: TShirt, title: "T-SHIRT WITH TAPE DETAILS", price: "$120" },
+    { id: 2, imgSrc: Pants, title: "FADED SKINNY JEANS", price: "$210" },
+    { id: 3, imgSrc: Shorts, title: "LOOSE FIT BERMUDA SHORTS", price: "$80" },
+    { id: 4, imgSrc: Shirt, title: "Vertical Striped Shirt", price: "$212" },
+    { id: 5, imgSrc: Pants, title: "FADED SKINNY JEANS", price: "$210" },
+]
+
 const Index = () => {
     const [showAll, setShowAll] = useState(false)
     const [screen, setScreen] = useState(window.innerWidth)
+    const navigate = useNavigate()
 
     const getCardShow = () => {
         if (screen <= 640) return 2;
@@ -27,21 +37,20 @@ const Index = () => {
         return () => window.removeEventListener('resize', handleResize)
     }, [])
 
-    const products = [
-        { imgSrc: TShirt, title: "T-SHIRT WITH TAPE DETAILS", price: "$120" },
-        { imgSrc: Pants, title: "FADED SKINNY JEANS", price: "$210" },
-        { imgSrc: Shorts, title: "LOOSE FIT BERMUDA SHORTS", price: "$80" },
-        { imgSrc: Shirt, title: "Vertical Striped Shirt", price: "$212" },
-        { imgSrc: Pants, title: "FADED SKINNY JEANS", price: "$210" },
-    ]
+    const handleClick = (item) => {
+        console.log(item.id, "Card");
+        navigate(`/${item.id}`)
+
+    }
+
     return (
         <div className='xl:px-10'>
             <div className='px-5'>
                 <h2 className='text-black font-extrabold text-center text-[32px] my-3'>New Arrivals</h2>
                 <div className='grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 lg:mb-20'>
                     {products.slice(0, showAll ? products.length : cardShow).map((product, index) => (
-                        <div key={index} className='hover:shadow-xl duration-500 rounded-lg'>
-                            <img src={product.imgSrc} alt={product.title} />
+                        <div key={index} className='hover:shadow-xl hover:bg-[rgb(240,238,237)] duration-500 rounded-lg'>
+                            <button onClick={() => handleClick(product)}><img src={product.imgSrc} alt={product.title} /></button>
                             <div className="font-bold text-xl p-3">
                                 <p className="text-sm lg:text-lg">{product.title}</p>
                                 <img src={stars} alt="ranking_stars" />
