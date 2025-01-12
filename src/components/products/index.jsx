@@ -38,7 +38,6 @@ const Index = () => {
     }, [])
 
     const handleClick = (item) => {
-        console.log(item.id, "Card");
         navigate(`/${item.id}`)
 
     }
