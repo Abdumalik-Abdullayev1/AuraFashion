@@ -70,10 +70,10 @@ const Index = () => {
                 <h2 className='text-black font-extrabold text-center text-[32px] my-3'>TOP SELLING</h2>
                 <div className='grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5'>
                     {products.slice(0, showAll ? products.length : cardShow).map((product, index) => (
-                        <div key={index}>
-                            <img src={product.imgSrc} alt={product.title} />
-                            <div className="font-bold text-xl">
-                                <p className="text-sm">{product.title}</p>
+                        <div key={index} className='hover:shadow-xl hover:bg-[rgb(240,238,237)] duration-500 rounded-lg'>
+                            <button onClick={() => handleClick(product)}><img src={product.imgSrc} alt={product.title} /></button>
+                            <div className="font-bold text-xl p-3">
+                                <p className="text-sm lg:text-lg">{product.title}</p>
                                 <img src={stars} alt="ranking_stars" />
                                 <p>{product.price}</p>
                             </div>
