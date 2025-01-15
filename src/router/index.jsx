@@ -1,6 +1,6 @@
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom";
 import App from '../App'
-import { Layout, Details } from '../pages'
+import { Layout, Details, Cart } from '../pages'
 
 const Router = () => {
     const router = createBrowserRouter (
@@ -8,6 +8,7 @@ const Router = () => {
             <Route path='/' element={<App/>}>
                 <Route index element={<Layout/>}/>
                 <Route path="/:id" element={<Details/>}/>
+                <Route path="/:id/:id" element={<Cart/>}/>
             </Route>
         )
     );

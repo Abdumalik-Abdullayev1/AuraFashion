@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { MdCheck } from "react-icons/md";
 import { products } from '../../components/products'
 import stars from '../../assets/stars.png'
 
 const Index = () => {
     const { id } = useParams()
+    const navigate = useNavigate()
     const [selectedColor, setSelectedColor] = useState(null);
     const [count, setCount] = useState(0)
 
@@ -17,6 +18,9 @@ const Index = () => {
     }
     const handleIncrement = () => {
         setCount((prev) => prev + 1)
+    }
+    const handleCart = (item) => {
+        navigate(`${item.id}`)
     }
 
     const product = products.filter((item) => item.id == id)
@@ -90,7 +94,12 @@ const Index = () => {
                                 <span>{count}</span>
                                 <button onClick={handleIncrement} className='outline-none'>+</button>
                             </div>
-                            <button className='w-[60%] bg-slate-300 py-3 rounded-[50px] hover:bg-black hover:text-white'>Add to Cart</button>
+                            <button
+                                onClick={() => handleCart(item)}
+                                className='w-[60%] bg-slate-300 py-2 rounded-[50px] hover:bg-black hover:text-white'
+                            >
+                                Add to Cart
+                            </button>
                         </div>
                     </div>
                 </div>
