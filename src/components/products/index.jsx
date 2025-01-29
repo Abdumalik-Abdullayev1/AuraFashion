@@ -7,11 +7,11 @@ import Shirt from '../../assets/vertical_tshirt.png'
 import Shorts from '../../assets/Shorts.png'
 
 export const products = [
-    { id: 1, imgSrc: TShirt, title: "T-SHIRT WITH TAPE DETAILS", price: "$120" },
-    { id: 2, imgSrc: Pants, title: "FADED SKINNY JEANS", price: "$210" },
-    { id: 3, imgSrc: Shorts, title: "LOOSE FIT BERMUDA SHORTS", price: "$80" },
-    { id: 4, imgSrc: Shirt, title: "Vertical Striped Shirt", price: "$212" },
-    { id: 5, imgSrc: Pants, title: "FADED SKINNY JEANS", price: "$210" },
+    { id: 1, imgSrc: TShirt, title: "T-SHIRT WITH TAPE DETAILS", price: "120" },
+    { id: 2, imgSrc: Pants, title: "FADED SKINNY JEANS", price: "210" },
+    { id: 3, imgSrc: Shorts, title: "LOOSE FIT BERMUDA SHORTS", price: "80" },
+    { id: 4, imgSrc: Shirt, title: "Vertical Striped Shirt", price: "230" },
+    { id: 5, imgSrc: Pants, title: "FADED SKINNY JEANS", price: "210" },
 ]
 
 const Index = () => {
@@ -53,7 +53,7 @@ const Index = () => {
                             <div className="font-bold text-xl p-3">
                                 <p className="text-sm lg:text-lg">{product.title}</p>
                                 <img src={stars} alt="ranking_stars" />
-                                <p>{product.price}</p>
+                                <p>{product.price}000 uzs</p>
                             </div>
                         </div>
                     ))}
@@ -75,7 +75,7 @@ const Index = () => {
                             <div className="font-bold text-xl p-3">
                                 <p className="text-sm lg:text-lg">{product.title}</p>
                                 <img src={stars} alt="ranking_stars" />
-                                <p>{product.price}</p>
+                                <p>{product.price}000 uzs</p>
                             </div>
                         </div>
                     ))}

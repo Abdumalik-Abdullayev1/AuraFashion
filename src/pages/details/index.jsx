@@ -42,11 +42,16 @@ const Index = () => {
                             <img className='lg:w-2/12' src={stars} alt="ranking_stars" />
                             <span className='text-slate-500'>4.5 / 5</span>
                         </div>
-                        <div className='flex text-3xl gap-3'>
-                            <p>{item.price}</p>
-                            <del className='text-slate-500'>$300</del>
+                        <div className='flex items-end text-3xl gap-3'>
+                            <p className='text-2xl sm:text-3xl'>{item.price}000uzs</p>
+                            <div>
+                                {product.map((item, index) => {
+                                    const discount = item.price / 0.20
+                                    return <del className='text-red-400 text-xl' key={index}>{discount}000uzs</del>
+                                })}
+                            </div>
                             <div className='bg-slate-200 text-lg px-5 rounded-3xl flex items-center'>
-                                <p className='text-red-700'>-40%</p>
+                                <p className='text-red-700'>-20%</p>
                             </div>
                         </div>
                         <p className='text-[12px] my-3 text-slate-500 md:text-sm md:w-[80%]'>This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.</p>
@@ -81,10 +86,10 @@ const Index = () => {
                         <div className='my-2'>
                             <p className='text-xl my-1 text-slate-400'>Choose Size</p>
                             <div className='flex gap-1'>
-                                <button className='w-[25%] sm:w-[15%] md:w-[25%] xl:w-[15%] py-1 bg-slate-300 rounded-[50px] focus:bg-black focus:text-white'>Small</button>
-                                <button className='w-[25%] sm:w-[15%] md:w-[25%] xl:w-[15%] py-1 bg-slate-300 rounded-[50px] focus:bg-black focus:text-white'>Medium</button>
-                                <button className='w-[25%] sm:w-[15%] md:w-[25%] xl:w-[15%] py-1 bg-slate-300 rounded-[50px] focus:bg-black focus:text-white'>Large</button>
-                                <button className='w-[25%] sm:w-[15%] md:w-[25%] xl:w-[15%] py-1 bg-slate-300 rounded-[50px] focus:bg-black focus:text-white'>X-Large</button>
+                                <button className='w-[25%] sm:w-[15%] md:w-[25%] xl:w-[15%] py-1 bg-slate-300 rounded-[50px] focus:bg-black focus:text-white'>S</button>
+                                <button className='w-[25%] sm:w-[15%] md:w-[25%] xl:w-[15%] py-1 bg-slate-300 rounded-[50px] focus:bg-black focus:text-white'>M</button>
+                                <button className='w-[25%] sm:w-[15%] md:w-[25%] xl:w-[15%] py-1 bg-slate-300 rounded-[50px] focus:bg-black focus:text-white'>L</button>
+                                <button className='w-[25%] sm:w-[15%] md:w-[25%] xl:w-[15%] py-1 bg-slate-300 rounded-[50px] focus:bg-black focus:text-white'>XL</button>
                             </div>
                         </div>
                         <hr />
