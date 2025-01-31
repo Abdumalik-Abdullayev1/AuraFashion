@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import Hero from '../../assets/hero_img.png'
 import Hero2 from '../../assets/hero_img2.png'
 import Versace from '../../assets/Versace.png'
@@ -13,6 +14,21 @@ import Gym from '../../assets/gym.png'
 import { Products } from '../../components'
 
 const Index = () => {
+  const navigate = useNavigate()
+
+  const casualPage  = () => {
+    navigate('/casual')
+  }
+  const formalPage  = () => {
+    navigate('/formal')
+  }
+  const partyPage  = () => {
+    navigate('/party')
+  }
+  const gymPage  = () => {
+    navigate('/gym')
+  }
+
   return (
     <div className='my-5'>
       <div>
@@ -56,19 +72,19 @@ const Index = () => {
             <h2 className='font-extrabold text-center text-3xl xl:text-5xl py-5'>BROWSE BY DRESS STYLE</h2>
           </div>
           <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 my-5'>
-            <button className='bg-white rounded-lg grid justify-between p-5 relative overflow-hidden h-[170px] xl:h-[240px] hover:bg-black hover:text-white duration-700'>
+            <button onClick={casualPage} className='bg-white rounded-lg grid justify-between p-5 relative overflow-hidden h-[170px] xl:h-[240px] hover:bg-black hover:text-white duration-700'>
               <p className='text-3xl font-semibold xl:text-5xl'>Casual</p>
               <img className='absolute top-0 right-0 xl:w-full' src={Casual} alt="Casual_dresses" />
             </button>
-            <button className='bg-white rounded-lg grid justify-between p-5 relative overflow-hidden h-[170px] xl:h-[240px] lg:col-span-2 hover:bg-black hover:text-white duration-700'>
+            <button onClick={formalPage} className='bg-white rounded-lg grid justify-between p-5 relative overflow-hidden h-[170px] xl:h-[240px] lg:col-span-2 hover:bg-black hover:text-white duration-700'>
               <p className='text-3xl font-semibold xl:text-6xl'>Formal</p>
               <img className='absolute top-0 right-0 xl:w-3/5 2xl:w-1/2' src={Formal} alt="Formal_dresses" />
             </button>
-            <button className='bg-white rounded-lg grid justify-between p-5 relative overflow-hidden h-[170px] xl:h-[240px] lg:col-span-2 hover:bg-black hover:text-white duration-700'>
+            <button onClick={partyPage} className='bg-white rounded-lg grid justify-between p-5 relative overflow-hidden h-[170px] xl:h-[240px] lg:col-span-2 hover:bg-black hover:text-white duration-700'>
               <p className='text-3xl font-semibold xl:text-6xl'>Party</p>
               <img className='absolute top-0 right-0 xl:w-3/5 2xl:w-1/2' src={Party} alt="Prty_dresses" />
             </button>
-            <button className='bg-white rounded-lg grid justify-between p-5 relative overflow-hidden h-[170px] xl:h-[240px] hover:bg-black hover:text-white duration-700'>
+            <button onClick={gymPage} className='bg-white rounded-lg grid justify-between p-5 relative overflow-hidden h-[170px] xl:h-[240px] hover:bg-black hover:text-white duration-700'>
               <p className='text-3xl font-semibold xl:text-5xl'>Gym</p>
               <img className='absolute top-0 right-0 xl:w-full' src={Gym} alt="Gym_dresses" />
             </button>
