@@ -52,6 +52,14 @@ const Index = () => {
     const handleSaw = () => {
         setShowCasual(!showCasual)
     }
+    const handleCart = (item) => {
+        const existingCart = JSON.parse(sessionStorage.getItem('cart')) || [];
+        const isItemInCart = existingCart.some(cartItem => cartItem.id === item.id);
+        if (!isItemInCart) {
+            const updatedCart = [...existingCart, item];
+            sessionStorage.setItem('cart', JSON.stringify(updatedCart));
+        }
+    }
 
 
     useEffect(() => {
@@ -73,10 +81,13 @@ const Index = () => {
                     {products.slice(0, showAll ? products.length : cardShow).map((product, index) => (
                         <div key={index} className='hover:shadow-xl hover:bg-[rgb(240,238,237)] duration-500 rounded-lg'>
                             <button onClick={() => handleClick(product)}><img src={product.imgSrc} alt={product.title} /></button>
-                            <div className="font-bold text-xl p-3">
+                            <div className="font-bold text-xl p-3 h-[15vh] flex flex-col justify-between">
                                 <p className="text-sm lg:text-lg">{product.title}</p>
-                                <img src={stars} alt="ranking_stars" />
-                                <p>{product.price}000 uzs</p>
+                                <span><img src={stars} alt="ranking_stars" /></span>
+                                <div className='sm:flex items-center justify-between'>
+                                    <p>{product.price}000 uzs</p>
+                                    <button onClick={() => handleCart(product)} className='bg-[rgb(240,238,237)] rounded text-sm px-2'>Add to cart</button>
+                                </div>
                             </div>
                         </div>
                     ))}

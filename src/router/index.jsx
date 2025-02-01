@@ -17,6 +17,7 @@ const Router = () => {
                 <Route index element={<Layout />} />
                 <Route path="/:id" element={<Details />} />
                 <Route path="/:id/:id" element={<Cart />} />
+                <Route path="/cart" element={<Cart />} />
                 <Route path="/casual" element={<Casual />} />
                 <Route path="/formal" element={<Formal />} />
                 <Route path="/party" element={<Party />} />

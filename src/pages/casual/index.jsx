@@ -73,9 +73,12 @@ const Index = () => {
           </div>
           <div className="space-y-2 2xl:space-y-1">
             <h4 className="font-medium 2xl:text-xl">Dress Style</h4>
-            {["Casual", "Formal", "Party", "Gym"].map((style) => (
-              <p key={style} className="cursor-pointer hover:text-blue-500 2xl:text-xl">{style}</p>
-            ))}
+            <div>
+              <p className="cursor-pointer hover:text-blue-500 2xl:text-xl">Casual</p>
+              <p className="cursor-pointer hover:text-blue-500 2xl:text-xl">Formal</p>
+              <p className="cursor-pointer hover:text-blue-500 2xl:text-xl">Party</p>
+              <p className="cursor-pointer hover:text-blue-500 2xl:text-xl">Gym</p>
+            </div>
           </div>
           <button className="w-full bg-black text-white py-2 rounded-md">Apply Filter</button>
         </div>

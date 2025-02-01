@@ -1,13 +1,18 @@
-import React, { useState } from 'react'
-import { useParams } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
 import { FcFullTrash } from "react-icons/fc";
-import { products } from '../../components/products'
 
 const Index = () => {
-    const { id } = useParams()
-    const cartProducts = products.filter((item) => item.id == id)
+    const [cartProducts, setCartProducts] = useState([])
     const [count, setCount] = useState(cartProducts.map(() => 1))
 
+    useEffect(() => {
+        const storedProducts = sessionStorage.getItem('cart')
+        if (storedProducts) {
+            const parsedProducts = JSON.parse(storedProducts)
+            setCartProducts(parsedProducts)
+            setCount(parsedProducts.map(() => 1))
+        }
+    }, [])
     const decrement = (index) => {
         setCount(prev => {
             const newCount = [...prev];
@@ -17,7 +22,6 @@ const Index = () => {
             return newCount;
         })
     }
-
     const increment = (index) => {
         setCount(prev => {
             const newCount = [...prev];
@@ -25,22 +29,27 @@ const Index = () => {
             return newCount;
         })
     }
+    const deleteProduct = (id) => {
+        const updatedCart = cartProducts.filter(item => item.id !== id)
+        setCartProducts(updatedCart)
+        sessionStorage.setItem('cart', JSON.stringify(updatedCart))
+    }
 
     return (
         <div className='px-5 mb-5 lg:px-20 xl:px-24'>
             <h1 className='my-3 font-extrabold text-4xl'>Your Cart</h1>
             <div className='lg:flex items-start gap-5'>
-                <div className='shadow-lg border rounded-2xl p-2 w-full'>
+                <div className='w-full'>
                     {
                         cartProducts.map((item, index) => (
-                            <div key={index} className='flex gap-10'>
+                            <div key={index} className='flex gap-10 mb-5'>
                                 <div className='w-2/6 h-full sm:w-3/12 md:w-2/12 lg:w-3/12 xl:w-2/12'>
                                     <img src={item.imgSrc} alt="T-shirt" />
                                 </div>
                                 <div className='w-4/6 md:w-[75%] flex flex-col justify-between'>
                                     <div className='flex items-center justify-between'>
                                         <h2 className='font-bold text-sm sm:text-xl md:text-2xl'>{item.title}</h2>
-                                        <button className='text-xl sm:text-2xl md:text-3xl'><FcFullTrash /></button>
+                                        <button onClick={() => deleteProduct(item.id)} className='text-xl sm:text-2xl md:text-3xl'><FcFullTrash /></button>
                                     </div>
                                     <p className='text-slate-400 text-sm sm:text-lg'>Size: L</p>
                                     <p className='text-slate-400 text-sm sm:text-lg'>Color: White</p>
@@ -69,7 +78,7 @@ const Index = () => {
                             </span>
                         </div>
                         <div className="flex justify-between text-red-500 font-semibold">
-                            <span>Discount (-20%)</span>
+                            <span>Discount</span>
                             <span>
                                 {cartProducts
                                     .map((item, index) => item.price * 0.20 * count[index])

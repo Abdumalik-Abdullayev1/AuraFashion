@@ -2,14 +2,18 @@ import React, { useState } from 'react'
 import Logo from '../../assets/SHOP.CO.png'
 import { FaBarsStaggered } from "react-icons/fa6";
 import { FaUser, FaOpencart, FaSearch, FaDropbox, FaSalesforce } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { SiAdidas } from "react-icons/si";
 
 
 const Index = () => {
   const [sideBar, setSideBar] = useState(false)
   const [searchVisible, setSearchVisible] = useState(false)
+  const navigate = useNavigate()
 
+  const handleCart =()=>{
+    navigate('/cart')
+  }
   const handleClick = () => {
     setSideBar(!sideBar)
   }
@@ -79,7 +83,7 @@ const Index = () => {
               <input className='bg-transparent outline-none relative' type="text" placeholder='Search for products...' />
             </div>
           )}
-          <button><FaOpencart /></button>
+          <button onClick={handleCart}><FaOpencart /></button>
           <button><FaUser /></button>
         </div>
       </div>
