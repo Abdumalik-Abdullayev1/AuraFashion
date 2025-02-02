@@ -109,9 +109,9 @@ const Index = () => {
                                 <button onClick={() => handleClick(products[index])}>
                                     <img src={products[index].imgSrc} alt={products[index].title} />
                                 </button>
-                                <div className="font-bold text-xl p-3">
+                                <div className="font-bold text-xl p-3 h-[15vh] flex flex-col justify-between">
                                     <p className="text-sm lg:text-lg">{products[index].title}</p>
-                                    <img src={stars} alt="ranking_stars" />
+                                    <span><img src={stars} alt="ranking_stars" /></span>
                                     <p>{products[index].price}000 uzs</p>
                                 </div>
                             </div>

@@ -74,10 +74,10 @@ const Index = () => {
           <div className="space-y-2 2xl:space-y-1">
             <h4 className="font-medium 2xl:text-xl">Dress Style</h4>
             <div>
-              <p className="cursor-pointer hover:text-blue-500 2xl:text-xl">Casual</p>
-              <p className="cursor-pointer hover:text-blue-500 2xl:text-xl">Formal</p>
-              <p className="cursor-pointer hover:text-blue-500 2xl:text-xl">Party</p>
-              <p className="cursor-pointer hover:text-blue-500 2xl:text-xl">Gym</p>
+              <p className="cursor-pointer hover:bg-slate-200 rounded-md px-2 2xl:text-xl">Casual</p>
+              <p onClick={() => navigate('/formal')} className="cursor-pointer hover:bg-slate-200 rounded-md px-2 2xl:text-xl">Formal</p>
+              <p onClick={() => navigate('/party')} className="cursor-pointer hover:bg-slate-200 rounded-md px-2 2xl:text-xl">Party</p>
+              <p onClick={() => navigate('/gym')} className="cursor-pointer hover:bg-slate-200 rounded-md px-2 2xl:text-xl">Gym</p>
             </div>
           </div>
           <button className="w-full bg-black text-white py-2 rounded-md">Apply Filter</button>
