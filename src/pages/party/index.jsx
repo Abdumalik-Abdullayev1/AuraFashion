@@ -4,26 +4,7 @@ import { MdCheck } from "react-icons/md";
 import { VscSettings } from "react-icons/vsc";
 import stars from '../../assets/stars.png'
 import { useNavigate } from 'react-router-dom';
-import party1 from '../../assets/i.webp'
-import party2 from '../../assets/i2.webp'
-import party3 from '../../assets/i3.webp'
-import party4 from '../../assets/i4.webp'
-import party5 from '../../assets/i5.webp'
-import party6 from '../../assets/i6.webp'
-import party7 from '../../assets/i7.webp'
-import party8 from '../../assets/i8.webp'
-
-
-export const party = [
-  { id: 19, imgSrc: party1, title: "Zara", price: "500" },
-  { id: 20, imgSrc: party2, title: "Zara", price: "500" },
-  { id: 21, imgSrc: party3, title: "Zara", price: "500" },
-  { id: 22, imgSrc: party4, title: "Zara", price: "500" },
-  { id: 24, imgSrc: party5, title: "Zara", price: "500" },
-  { id: 25, imgSrc: party6, title: "Zara", price: "500" },
-  { id: 26, imgSrc: party7, title: "Zara", price: "500" },
-  { id: 27, imgSrc: party8, title: "Zara", price: "500" },
-]
+import { products } from '../../components/product-images';
 
 const Index = () => {
   const navigate = useNavigate()
@@ -34,8 +15,8 @@ const Index = () => {
   const sizes = ["3XL", "2XL", "XL", "L", "M", "S"];
   const handleClick = (item) => {
     navigate(`/${item.id}`)
-
   }
+  const party = products.slice(18, 26)
   useEffect(() => {
     const handleResize = () => {
       setScreenWidth(window.innerWidth);

@@ -4,26 +4,8 @@ import { MdCheck } from "react-icons/md";
 import { VscSettings } from "react-icons/vsc";
 import stars from '../../assets/stars.png'
 import { useNavigate } from 'react-router-dom';
-import gym1 from '../../assets/gym1.webp'
-import gym2 from '../../assets/gym2.webp'
-import gym5 from '../../assets/gym5.webp'
-import gym3 from '../../assets/gym3.webp'
-import gym4 from '../../assets/gym4.webp'
-import gym6 from '../../assets/gym6.webp'
-import gym7 from '../../assets/gym7.webp'
-import gym8 from '../../assets/gym8.webp'
+import { products } from '../../components/product-images';
 
-
-export const gym = [
-  { id: 28, imgSrc: gym1, title: "Zara", price: "500" },
-  { id: 32, imgSrc: gym5, title: "Zara", price: "500" },
-  { id: 31, imgSrc: gym4, title: "Zara", price: "500" },
-  { id: 33, imgSrc: gym6, title: "Zara", price: "500" },
-  { id: 29, imgSrc: gym2, title: "Zara", price: "500" },
-  { id: 34, imgSrc: gym7, title: "Zara", price: "500" },
-  { id: 30, imgSrc: gym3, title: "Zara", price: "500" },
-  { id: 35, imgSrc: gym8, title: "Zara", price: "500" },
-]
 
 const Index = () => {
   const navigate = useNavigate()
@@ -36,6 +18,7 @@ const Index = () => {
     navigate(`/${item.id}`)
 
   }
+  const gym = products.slice(-8)
   useEffect(() => {
     const handleResize = () => {
       setScreenWidth(window.innerWidth);

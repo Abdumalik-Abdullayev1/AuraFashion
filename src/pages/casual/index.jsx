@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { products } from '../../components/products'
+import { products } from '../../components/product-images'
 import { MdCheck } from "react-icons/md";
 import { VscSettings } from "react-icons/vsc";
 import stars from '../../assets/stars.png'
@@ -83,7 +83,7 @@ const Index = () => {
           <button className="w-full bg-black text-white py-2 rounded-md">Apply Filter</button>
         </div>
         <div className='grid grid-cols-2 gap-2 my-5 sm:grid-cols-3 lg:my-0'>
-          {products.slice(-6).map((item, index) => {
+          {products.slice(4, 10).map((item, index) => {
             return <div key={index}>
               <div className='hover:shadow-xl hover:bg-[rgb(240,238,237)] duration-500 rounded-lg'>
                 <button onClick={() => handleClick(item)}><img src={item.imgSrc} alt={item.title} /></button>

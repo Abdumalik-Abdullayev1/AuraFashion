@@ -4,25 +4,8 @@ import { MdCheck } from "react-icons/md";
 import { VscSettings } from "react-icons/vsc";
 import stars from '../../assets/stars.png'
 import { useNavigate } from 'react-router-dom';
-import Formal1 from '../../assets/zara_rb.png'
-import Formal2 from '../../assets/ii_rb.png'
-import Formal3 from '../../assets/img3.png'
-import Formal4 from '../../assets/img.png'
-import Formal5 from '../../assets/img4.png'
-import Formal6 from '../../assets/img2.png'
-import Formal7 from '../../assets/img5.png'
-import Formal8 from '../../assets/img6.png'
+import { products } from '../../components/product-images';
 
-export const formal = [
-  { id: 11, imgSrc: Formal1, title: "Zara", price: "500" },
-  { id: 12, imgSrc: Formal2, title: "Loro Piana", price: "850" },
-  { id: 13, imgSrc: Formal3, title: "Loro Piana", price: "850" },
-  { id: 14, imgSrc: Formal4, title: "Loro Piana", price: "850" },
-  { id: 15, imgSrc: Formal5, title: "Loro Piana", price: "850" },
-  { id: 16, imgSrc: Formal6, title: "Loro Piana", price: "850" },
-  { id: 17, imgSrc: Formal7, title: "Loro Piana", price: "850" },
-  { id: 18, imgSrc: Formal8, title: "Loro Piana", price: "850" },
-]
 
 const Index = () => {
   const navigate = useNavigate()
@@ -45,7 +28,7 @@ const Index = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  // console.log(screenWidth);
+  const formal = products.slice(10, 18)
   const getFormalCart = () => {
     if (screenWidth <= 767) return formal.slice(0, 6);
     if (screenWidth <= 1024) return formal.slice(0, 8);

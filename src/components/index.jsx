@@ -1,6 +1,6 @@
 import Header from './header'
 import Footer from './footer'
 import Products from './products'
-import Style from '../pages/casual'
+import Product from './product-images'
 
-export { Header, Footer, Products }
+export { Header, Footer, Products, Product }
