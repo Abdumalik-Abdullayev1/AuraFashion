@@ -7,7 +7,10 @@ import {
     Casual,
     Formal, 
     Party, 
-    Gym
+    Gym,
+    Login,
+    Register,
+    Verify
 } from '../pages'
 
 const Router = () => {
@@ -22,6 +25,9 @@ const Router = () => {
                 <Route path="/formal" element={<Formal />} />
                 <Route path="/party" element={<Party />} />
                 <Route path="/gym" element={<Gym />} />
+                <Route path="login" element={<Login/>}/>
+                <Route path="register" element={<Register/>}/>
+                <Route path="verify" element={<Verify/>}/>
             </Route>
         )
     );

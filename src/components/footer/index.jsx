@@ -10,7 +10,7 @@ import Logo from '../../assets/SHOP.CO.png'
 
 const Index = () => {
   return (
-    <div className='px-5'>
+    <div className='px-5 mb-20'>
       <div className='bg-black p-5 rounded-xl sm:flex items-center justify-between'>
         <h2 className='text-white text-3xl font-extrabold lg:text-5xl sm:w-[50%] lg:w-[70%] xl:w-[50%]'>STAY UPTO DATE ABOUT OUR LATEST OFFERS</h2>
         <div className='lg:w-[35%]'>

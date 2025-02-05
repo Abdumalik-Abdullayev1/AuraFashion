@@ -36,7 +36,7 @@ const Index = () => {
     }
 
     return (
-        <div className='px-5 mb-5 lg:px-20 xl:px-24'>
+        <div className='px-5 mb-5 lg:px-20 xl:px-24 mt-20 lg:mt-24'>
             <h1 className='my-3 font-extrabold text-4xl'>Your Cart</h1>
             <div className='lg:flex items-start gap-5'>
                 <div className='w-full'>

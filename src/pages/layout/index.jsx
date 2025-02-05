@@ -30,7 +30,7 @@ const Index = () => {
   }
 
   return (
-    <div className='my-5'>
+    <div className='my-24'>
       <div>
         <div className='px-5 lg:px-10 xl:px-16 2xl:px-20 sm:grid grid-cols-2 items-start'>
           <div>

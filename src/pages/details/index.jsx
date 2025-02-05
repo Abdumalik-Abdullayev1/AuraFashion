@@ -31,7 +31,7 @@ const Index = () => {
 
     const product = products.filter((item) => item.id == id)
     return (
-        <div className='px-5 my-5 xl:px-20'>
+        <div className='px-5 my-5 xl:px-20 mt-20 lg:mt-28'>
             <div>
                 {product.map((item, index) => (
                     <div key={index} className='md:flex gap-5'>

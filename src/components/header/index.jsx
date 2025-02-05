@@ -28,7 +28,7 @@ const Index = () => {
   }
 
   return (
-    <div className='px-8 lg:px-16 xl:px-20 bg-slate-300 py-5'>
+    <div className='px-8 lg:px-16 xl:px-20 bg-slate-300 py-5 w-full top-0 z-50 fixed'>
       <div className='flex items-center justify-between'>
         <div className='flex items-center gap-5'>
           <button onClick={handleClick}>
@@ -58,7 +58,7 @@ const Index = () => {
               </div>
             )
           }
-          <img className='w-32 xl:w-64' src={Logo} alt="Company logo" />
+          <p onClick={() => navigate('/')}><img className='w-32 xl:w-64' src={Logo} alt="Company logo" /></p>
           <div className='hidden sm:flex items-center w-full gap-3 2xl:gap-5 2xl:text-xl'>
             <select className='bg-transparent outline-none'>
               <option value="1">Shop</option>
@@ -84,7 +84,7 @@ const Index = () => {
             </div>
           )}
           <button onClick={handleCart}><FaOpencart /></button>
-          <button><FaUser /></button>
+          <button onClick={() => navigate('/login')}><FaUser /></button>
         </div>
       </div>
     </div>

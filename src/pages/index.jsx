@@ -5,6 +5,9 @@ import Casual from './casual'
 import Formal from './formal'
 import Party from './party'
 import Gym from './gym'
+import Login from './login'
+import Verify from './verify'
+import Register from './register'
 
 export {
     Layout,
@@ -13,5 +16,8 @@ export {
     Casual,
     Formal,
     Party,
-    Gym
+    Gym,
+    Login,
+    Register,
+    Verify
 }
