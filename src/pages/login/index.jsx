@@ -19,7 +19,7 @@ const App = () => {
   };
 
   return (
-    <div className='px-5 my-20'>
+    <div className='px-5 my-20 lg:my-28'>
       <h2 className='mb-5 text-2xl font-bold'>Login</h2>
       <Form
         name="login"

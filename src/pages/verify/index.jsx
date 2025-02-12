@@ -24,7 +24,7 @@ const App = () => {
     try {
       const res = await auth.verify(values)
       if (res.status === 200) {
-        navigate('/login')
+        navigate('/')
         console.log(res);
       }
 

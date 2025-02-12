@@ -8,6 +8,7 @@ import Gym from './gym'
 import Login from './login'
 import Verify from './verify'
 import Register from './register'
+import Admin from './admin-page/admin-layout'
 
 export {
     Layout,
@@ -19,5 +20,6 @@ export {
     Gym,
     Login,
     Register,
-    Verify
+    Verify,
+    Admin
 }
