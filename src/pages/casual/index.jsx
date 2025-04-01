@@ -19,7 +19,7 @@ const Index = () => {
     
   }
   return (
-    <div className='px-5 xl:px-24'>
+    <div className='px-5 xl:px-24 mt-16 xl:mt-24'>
       <div className='flex items-center justify-between'>
         <h1 className='font-semibold text-2xl my-5 2xl:text-4xl'>Casual</h1>
         <button onClick={openFilter} className='text-xl'>

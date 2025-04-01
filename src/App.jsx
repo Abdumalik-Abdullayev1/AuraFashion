@@ -10,7 +10,9 @@ const App = () => {
     if(location.pathname == "/login" ||
        location.pathname == "/register" ||
        location.pathname == "/verify" ||
-       location.pathname == "/admin-layout" 
+       location.pathname == "/admin-layout" ||
+       location.pathname == '/admin-layout/products' ||
+       location.pathname == '/admin-layout/settings'
     ){
       setRemoveHeader(true)
     }else{

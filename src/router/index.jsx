@@ -13,6 +13,7 @@ import {
     Verify,
     Admin
 } from '../pages'
+import { Dashboard, Product, Settings } from "../pages/admin-page";
 
 const Router = () => {
     const router = createBrowserRouter(
@@ -29,7 +30,11 @@ const Router = () => {
                 <Route path="login" element={<Login/>}/>
                 <Route path="register" element={<Register/>}/>
                 <Route path="verify" element={<Verify/>}/>
-                <Route path="admin-layout" element={<Admin/>}/>
+                <Route path="admin-layout" element={<Admin/>}>
+                    <Route index element={<Dashboard/>}/>
+                    <Route path="products" element={<Product/>}/>
+                    <Route path="settings" element={<Settings/>}/>
+                </Route>
             </Route>
         )
     );

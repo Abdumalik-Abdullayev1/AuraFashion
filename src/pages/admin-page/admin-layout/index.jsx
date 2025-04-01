@@ -1,15 +1,23 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
-  UploadOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
 } from '@ant-design/icons';
 import { Button, Layout, Menu, theme } from 'antd';
+import { adminLayout } from '../../../router/routes';
+import { NavLink, useLocation, Outlet } from 'react-router-dom'
+
 const { Header, Sider, Content } = Layout;
 const App = () => {
   const [collapsed, setCollapsed] = useState(false);
+  const [selectedKey, setSelectedKey] = useState("")
+  const { pathname } = useLocation()
+
+
+  useEffect(() => {
+    let index = adminLayout.findIndex((item) => item.pathname === pathname)
+    setSelectedKey(index.toString())
+  }, [pathname])
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
@@ -20,24 +28,12 @@ const App = () => {
         <Menu
           theme="dark"
           mode="inline"
-          defaultSelectedKeys={['1']}
-          items={[
-            {
-              key: '1',
-              icon: <UserOutlined />,
-              label: 'nav 1',
-            },
-            {
-              key: '2',
-              icon: <VideoCameraOutlined />,
-              label: 'nav 2',
-            },
-            {
-              key: '3',
-              icon: <UploadOutlined />,
-              label: 'nav 3',
-            },
-          ]}
+          selectedKeys={[selectedKey]}
+          items={adminLayout.map((item, index) => ({
+            key: index.toString(),
+            icon: item.icon,
+            label: <NavLink to={item.path} className='text-white'>{item.content}</NavLink>
+          }))}
         />
       </Sider>
       <Layout>
@@ -66,7 +62,7 @@ const App = () => {
             borderRadius: borderRadiusLG,
           }}
         >
-          Content
+          <Outlet/>
         </Content>
       </Layout>
     </Layout>

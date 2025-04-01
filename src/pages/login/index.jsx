@@ -10,7 +10,11 @@ const App = () => {
     try {
       const res = await auth.sign_in(values)
       if (res.status === 200) {
-        navigate('/')
+        if(res.data.user_role === "admin"){
+          navigate('/admin-layout')
+        }else{
+          navigate('/')
+        }
       }
 
     } catch (error) {
